@@ -5,7 +5,7 @@ class ClickCounter extends React.Component {
         super(); 
         this.state = { count: 0 }; 
     }
-    render() { 
+    render() {       
         return ( 
             <div> 
                 <button>CLICKMEE!!!</button>
