@@ -110,6 +110,32 @@
 # letter_reducer('zzxxy') => 'xxxy' => 'yxy'
 
 
+TRANSFORM_MAP = {
+  'x' => 'y',
+  'y' => 'z',
+  'z' => 'x'
+}
+# str = 'zzxxy'
+def letter_reducer(str)
+  replaced = true 
+  reduced = str[0] # reduced = z 
+  while replaced
+    replaced = false
+    str[1..-1].each_char do |char|  
+      if char == reduced[reduced.length - 1] && !replaced  
+        reduced[reduced.length - 1] = TRANSFORM_MAP[char]  
+        replaced = true 
+      else
+        reduced << char 
+      end
+    end
+    str = reduced 
+    reduced = reduced[0] if replaced 
+  end
+  reduced
+end
+
+
 
 
 #### Math Eval ####
