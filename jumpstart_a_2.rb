@@ -29,12 +29,26 @@ def missing_numbers(arr)
 #                      [2, 4]]
 #
 # You may assume a square matrix as input. Do not use `.transpose`
+
 def transpose(matrix)
-  #
-  # your code goes here
-  # start with empty array, create new array 
-  # double loop through matrix, and switch/shovel, arr[i][j] = result[j][i]
+  x = matrix.length 
+
+  y = matrix[0].length
+
+  result = Array.new(x) { Array.new(y) }
+
+  matrix.each_with_index do |row, idx|
+
+    row.each_with_index do |el, idx2|
+
+      result[idx2][idx] = el
+      # p result 
+    end
+  end
+  result
 end
+      
+
 # puts "-------Transpose-------"
 # matrix_one = [[1, 2],
 #             [3, 4]]
