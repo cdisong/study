@@ -41,7 +41,7 @@ def transpose(matrix)
 
     row.each_with_index do |el, idx2|
 
-      result[idx2][idx] = el
+      result[idx2][idx] = el     
       # p result 
     end
   end
