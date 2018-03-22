@@ -174,7 +174,7 @@ function rps_bot(str) {
   //refer to python solution for better solution
 
   function pascals_triangle(num) {
-    let result = [[1]]; 
+    let result = [[1]];                     
     for(let i = 0; i < num; i++) {
         result.push(nextRow(result[result.length-1]))
     }
