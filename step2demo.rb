@@ -217,3 +217,39 @@ puts pair_product?([5, 3, 4, 2], 6) == true
 puts pair_product?([5, 3, 5], 10) == false
 puts pair_product?([6, 1, 7, 8], 1) == false
 puts pair_product?([2, 8, 6, 2], 4) == true
+
+# Vigenere Cipher
+
+# Vigenere's Cipher is a tool for encrypting strings. We'll offset each character
+# according to a key sequence. For example, if we encrypt "bananasinpajamas" with the
+# key sequence [1, 2, 3], the result would be "ccqbpdtkqqcmbodt":
+#
+# Word:   b a n a n a s i n p a j a m a s
+# Keys:   1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1
+# Cipher: c c q b p d t k q q c m b o d t
+#
+# Note that offsets should wrap around the alphabet - offsetting 'z' by 1 should
+# produce 'a'. It could wrap the around the alphabet n number of times; 
+# for example, 100 times.
+#
+# Write a method that takes a string and a key-sequence, returning
+# the encrypted word. Assume only lower-case letters are used.
+
+# We're giving you the alphabet as an array, don't modify it!
+# ------------------------------------------------------------------------------
+
+def vigenere_cipher(string, key_sequence)
+  alphabet = ("a".."z").to_a
+  # so first things first, it looks like i'm gonna need to iterate over the string 
+  # probably will also have to find a way to continuously iterate over the key_sequence until i'm done iterating over string 
+  # HMMM HOW WILL I DO THAT? 
+  # 
+  # your code goes here
+  #
+end
+
+puts "----Vigenere cipher----"
+puts vigenere_cipher("toerrishuman", [1]) == "upfssjtivnbo"
+puts vigenere_cipher("toerrishuman", [1, 2]) == "uqftsktjvobp"
+puts vigenere_cipher("toarrispirate", [1, 2, 3, 4]) == "uqdvskvtjtdxf"
+puts vigenere_cipher("zzz", [1, 2, 1]) === "aba"
