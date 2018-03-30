@@ -79,3 +79,38 @@ puts even_splitters("jk") == ["j", "k"]
 puts even_splitters("xoxo") == ["x", "o"]
 puts even_splitters("banana") == ["b","a"]
 puts even_splitters("mishmash") == ["m","h"]   
+
+# Long Word Count
+
+# Return the number of words longer than 7 characters
+# "cat cactus balderdash phenomenon amazon" has two words over 7 characters long
+# "balderdash" and "phenomenon"
+# long_word_count("cat cactus balderdash phenomenon amazon") => 2
+
+def long_word_count(text)
+  #
+  # your code goes here
+  #
+end
+
+puts "-------Long Word Count-------"
+puts long_word_count("") == 0
+puts long_word_count("short words only") == 0
+puts long_word_count("one reallylong word") == 1
+puts long_word_count("two reallylong words inthisstring") == 2
+
+### Missing Numbers
+#
+# Given an array of unique integers ordered from least to greatest, write
+# a method that returns an array of the integers that are needed to
+# fill in the consecutive set.
+
+def missing_numbers(nums)
+
+end
+
+puts "-------Missing Numbers-------"
+puts missing_numbers([1, 3]) == [2]
+puts missing_numbers([2, 3, 7]) == [4, 5, 6]
+puts missing_numbers([-5, -1, 0, 3]) == [-4, -3, -2, 1, 2]
+puts missing_numbers([0, 5]) == [1, 2, 3, 4]
