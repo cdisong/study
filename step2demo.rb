@@ -263,7 +263,7 @@ puts vigenere_cipher("zzz", [1, 2, 1]) === "aba"
 
 def compound_words?(array, target)
   i = 0 
-  while i < array.length - 1 
+  while i < array.length
     j = 0 
     while j < array.length 
       if array[i] + array[j] == target && i != j 
