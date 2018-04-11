@@ -297,7 +297,33 @@ puts compound_words?(["bye", "bye", "greetings"], "byebye") == true
 
 
 def number_counting_seq(n)
+  return "" if n == 0
+
+  counting_sequence = ["1"]
   
+  until counting_sequence.length == n
+    last_num = counting_sequence.last
+    new_num = []
+    
+    count = 0
+    start_num = last_num[0]
+    
+    last_num.chars.each do | current_digit |
+      if current_digit == start_num
+        count += 1
+      else
+        new_num << count
+        new_num << start_num
+        start_num = current_digit
+        count = 1
+      end
+    end
+    new_num << count
+    new_num << start_num
+    
+    counting_sequence << new_num.join
+  end
+  counting_sequence.last
 end
 
 
