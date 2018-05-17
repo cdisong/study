@@ -1,3 +1,5 @@
+require 'byebug'
+
 def sum_to(n)
     return 1 if n == 1 
     n + sum_to(n - 1)
@@ -12,3 +14,9 @@ def add_numbers(nums_array)
 end 
 
 
+def gamma_fnc(int)
+    debugger
+    return nil if int == 0 
+    return 1 if int == 1 
+    (int - 1) * gamma_fnc(int - 2)
+end 
