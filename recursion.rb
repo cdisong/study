@@ -15,8 +15,17 @@ end
 
 
 def gamma_fnc(int)
-    debugger
-    return nil if int == 0 
+    return nil if int < 0 
     return 1 if int == 1 
-    (int - 1) * gamma_fnc(int - 2)
+    (int - 1) * gamma_fnc(int - 1)
 end 
+
+
+
+def ice_cream_shop(array, str) 
+    return true if array.last == str 
+    return false if array.length < 1
+
+    ice_cream_shop(array[0...array.length - 1], str) 
+end 
+
