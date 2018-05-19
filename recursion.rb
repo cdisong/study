@@ -29,3 +29,9 @@ def ice_cream_shop(array, str)
     ice_cream_shop(array[0...array.length - 1], str) 
 end 
 
+
+
+def reverse(string)
+    return "" if string.empty? 
+    string[-1] + reverse(string[0...-1])
+end 
