@@ -34,4 +34,23 @@ end
 def reverse(string)
     return "" if string.empty? 
     string[-1] + reverse(string[0...-1])
+end
+
+
+def exponentation(b, n)
+    return 1 if n == 0 
+    b * exponentation(b, n - 1)
 end 
+
+
+def exponentation2(b, n) 
+    return 1 if n == 0 
+    return b if n == 1 
+
+    if n.even? 
+        exponentation2(b, (n / 2)) * exponentation2(b, (n / 2))
+    else 
+        b * exponentation2(b, (n / 2)) * exponentation2(b, (n / 2))
+    end 
+end 
+
