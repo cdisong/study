@@ -54,3 +54,15 @@ def exponentation2(b, n)
     end 
 end 
 
+
+
+def deep_dup(array)
+    return [] if array.empty?
+
+    result = [] 
+    array.each do |el| 
+        result << el if !(el.is_a?(Array))
+        result << deep_dup(el) if el.is_a?(Array) 
+    end 
+    return result 
+end 
