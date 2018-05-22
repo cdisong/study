@@ -66,3 +66,18 @@ def deep_dup(array)
     end 
     return result 
 end 
+
+
+def fibonacci(n)
+    return [] if n == 0 
+    return [0] if n == 1 
+
+    result = [0,1] 
+    while result.length < n 
+        result << result[-1] + result[-2]
+    end 
+
+    return result 
+end 
+
+
