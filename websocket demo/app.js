@@ -16,5 +16,9 @@ window.onload = function() {
         socketStatus.className = 'open'; 
     };
 
+    socket.onerror = function(error) {
+        console.log('WebSocket Error: ' + error);
+    };
+
     
   };
