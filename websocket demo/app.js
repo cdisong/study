@@ -8,7 +8,7 @@ window.onload = function() {
     var closeBtn = document.getElementById('close');
     
     // create new websocket
-    var socket = new WebSocket('ws://echo.websocket.org');
+    var socket = new WebSocket('wss://echo.websocket.org');
 
     // when websocket opens, show connected message 
     socket.onopen = function(event) {
@@ -35,5 +35,11 @@ window.onload = function() {
         
         return false;
     }   
+
+    // show a disconnected message when websocket is closed 
+    socket.onclose = function(event) {
+        socketStatus.innerHTML = 'Disconnected from WebSocket. '; 
+        socketStatus.className = 'closed'; 
+    }
     
   };
