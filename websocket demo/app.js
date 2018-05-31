@@ -29,17 +29,22 @@ window.onload = function() {
         // send message through websocket
         socket.send(message); 
         // add message to messages list 
-        messagesList.innerHTML += '<li class="sent"><span>Sent:</span>' + message '</li>';
+        messagesList.innerHTML += '<li class="sent"><span>Sent:</span>' + message + '</li>';
         // clear out message field
         messageField.value = ''; 
         
         return false;
-    }   
+    }; 
+
+    socket.onmessage = function(event) {
+        var message = event.data; 
+        messagesList.innerHTMl += '<li class="received"><span>Received:</span>' + message + '</li>';
+    };
 
     // show a disconnected message when websocket is closed 
     socket.onclose = function(event) {
         socketStatus.innerHTML = 'Disconnected from WebSocket. '; 
         socketStatus.className = 'closed'; 
-    }
+    };
     
   };
