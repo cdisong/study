@@ -38,7 +38,7 @@ window.onload = function() {
 
     socket.onmessage = function(event) {
         var message = event.data; 
-        messagesList.innerHTMl += '<li class="received"><span>Received:</span>' + message + '</li>';
+        messagesList.innerHTML += '<li class="received"><span>Received:</span>' + message + '</li>';
     };
 
     // show a disconnected message when websocket is closed 
