@@ -18,12 +18,38 @@ def anagrams?(str1, str2)
   
   # An isogram is a word of only non-repeating letters. Define a method that, given two isograms of the same length, returns an array of two elements indicating matches: the first number is the number of letters matched in both words at the same position, and the second is the number of letters matched in both words but not in the same position.
   def isogram_matcher(isogram1, isogram2)
-    
+    result = [0,0]
+    i = 0 
+    while i < isogram1.length 
+      j = 0 
+      while j < isogram2.length 
+        if j == i && isogram1[i] == isogram2[j]
+          result[0] += 1 
+        elsif j != i && isogram1[i] == isogram2[j] 
+          result[1] += 1 
+        end 
+        j += 1 
+      end 
+      i += 1 
+    end 
+    return result 
   end
   
   # You have a panoramic view in front of you, but you only can take a picture of two landmarks at a time (your camera is small). You want to capture every pair of landmarks that are next to each other. Define a method that, given an array of landmarks, returns an array of every adjacent pair from left to right. Assume the panorama wraps around.
   def panoramic_pairs(landmarks)
-  
+    result = [] 
+    i = 0 
+    j = i + 1 
+    while j <= landmarks.length 
+      if j == landmarks.length 
+        result << [landmarks[i], landmarks[0]]
+      else 
+        result << [landmarks[i],landmarks[j]]
+      end 
+      i += 1 
+      j += 1 
+    end 
+    return result 
   end
   
   # Xbonacci
