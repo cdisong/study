@@ -6,6 +6,7 @@ window.onload = function() {
     var messagesList = document.getElementById('messages');
     var socketStatus = document.getElementById('status');
     var closeBtn = document.getElementById('close');
+    var openBtn = document.getElementById('open');
     
     // create new websocket
     var socket = new WebSocket('wss://echo.websocket.org');
@@ -47,4 +48,17 @@ window.onload = function() {
         socketStatus.className = 'closed'; 
     };
     
+    closeBtn.onclick = function(e) {
+        e.preventDefault();
+
+        // close websocket 
+        socket.close();
+        return false;
+    };
+
+    openBtn.onclick = function(e) {
+        e.preventDefault();
+
+        socket = new WebSocket('wss://echo.websocket.org');
+    };
   };
