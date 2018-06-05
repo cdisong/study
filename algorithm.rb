@@ -170,7 +170,7 @@ def long_word_count(text)
     #
     # your code goes here
     #
-  end
+  end 
   
   puts "-------Hashtagify-------"
   puts hashtagify("coding", ["coding"]) == "#coding"
@@ -212,3 +212,43 @@ def long_word_count(text)
   puts vigenere_cipher("toerrishuman", [1, 2]) == "uqftsktjvobp"
   puts vigenere_cipher("toarrispirate", [1, 2, 3, 4]) == "uqdvskvtjtdxf"
   puts vigenere_cipher("zzz", [1, 2, 1]) === "aba"
+
+
+  def two_sum(nums, target)
+    result = nil 
+    i = 0 
+    while i < nums.length - 1 
+        j = i + 1 
+        while j < nums.length 
+            if nums[i] + nums[j] == target 
+                result = [i,j]
+                return result
+            end 
+            j += 1 
+        end 
+        i += 1 
+    end 
+    return result 
+end
+
+def large_group_positions(s)
+  result = [] 
+  i = 0 
+  while i < s.length 
+      j = i + 1 
+      first = nil 
+      second = nil 
+      if s[i] == s[j] && s[i] == s[i+2]
+          first = i 
+          until s[i] != s[j]
+              j += 1 
+          end 
+          second = j - 1 
+          result << [first, second]
+          i = j 
+      else 
+          i += 1 
+      end 
+  end 
+  return result 
+end
